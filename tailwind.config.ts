@@ -18,6 +18,28 @@ const config: Config = {
     },
   },
   darkMode: "class",
-  plugins: [nextui()],
+  plugins: [
+    nextui({
+      prefix: "nextui", // prefix for themes variables
+      addCommonColors: false, // override common colors (e.g. "blue", "green", "pink").
+      defaultTheme: "light", // default theme from the themes object
+      defaultExtendTheme: "light", // default theme to extend on custom themes
+      themes: {
+        light: {
+          colors: {
+            primary: "#FEC81A",
+            secondary: "#033668",
+            background: "#FFE6A7",
+            foreground: "#4b4b4b",
+            danger: "#FF0C0C",
+            success: "#22CD67",
+          },
+        },
+        dark: {
+          colors: {}, // dark theme colors
+        },
+      },
+    }),
+  ],
 };
 export default config;
