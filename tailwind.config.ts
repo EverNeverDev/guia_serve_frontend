@@ -29,8 +29,8 @@ const config: Config = {
           colors: {
             primary: "#FEC81A",
             secondary: "#033668",
-            background: "#FFE6A7",
-            foreground: "#4b4b4b",
+            background: "#fafafc",
+            foreground: "#1e1e1e",
             danger: "#FF0C0C",
             success: "#22CD67",
           },
