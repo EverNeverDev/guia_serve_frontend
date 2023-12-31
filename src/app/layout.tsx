@@ -3,7 +3,7 @@ import { Inter, Poppins } from "next/font/google";
 // Styles
 import "./globals.css";
 // Components
-import { Providers } from "./common";
+import { CustomNavbar, Providers, WrapperContainer } from "./common";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -24,7 +24,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={poppins.className}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <CustomNavbar />
+          <WrapperContainer>{children}</WrapperContainer>
+        </Providers>
       </body>
     </html>
   );
