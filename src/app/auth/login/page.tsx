@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Input, Link } from "@nextui-org/react";
 import { EyeFilledIcon, EyeSlashFilledIcon } from "@/app/common";
 // Schema
-import { loginFormData, loginSchema } from "./schemas/loginSchema";
+import { loginFormData, loginSchema } from "./schema/loginSchema";
 
 const Login = () => {
   const {
@@ -23,7 +23,7 @@ const Login = () => {
   const togglePasswordVisibility = () => {
     setIsPasswordVisible((prevState) => !prevState);
   };
-  const onSubmit = (data) => {
+  const onSubmit = (data: loginFormData) => {
     console.log("HADOUKEN DATA", data);
   };
 

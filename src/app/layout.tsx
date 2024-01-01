@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 // Styles
+import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
 // Components
 import { CustomNavbar, Providers, WrapperContainer } from "./common";
+import { ToastContainer } from "react-toastify";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -27,6 +29,7 @@ export default function RootLayout({
         <Providers>
           <CustomNavbar />
           <WrapperContainer>{children}</WrapperContainer>
+          <ToastContainer />
         </Providers>
       </body>
     </html>
