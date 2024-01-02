@@ -58,6 +58,7 @@ class UserRepo {
     try {
       const userSnapshot = await getDoc(userDocRef);
       const addressSnapshot = await getDoc(addressDocRef);
+
       const userData = userSnapshot.data();
       const addressData = addressSnapshot.data();
       return {

@@ -7,8 +7,11 @@ import { Button, Input, Link } from "@nextui-org/react";
 import { EyeFilledIcon, EyeSlashFilledIcon } from "@/app/common";
 // Schema
 import { loginFormData, loginSchema } from "./schema/loginSchema";
+// Store
+import useAuthState from "@/store/auth.store";
 
 const Login = () => {
+  const { isLoading, login, loginWithGoogle } = useAuthState();
   const {
     register,
     handleSubmit,
@@ -23,8 +26,8 @@ const Login = () => {
   const togglePasswordVisibility = () => {
     setIsPasswordVisible((prevState) => !prevState);
   };
-  const onSubmit = (data: loginFormData) => {
-    console.log("HADOUKEN DATA", data);
+  const onSubmit = async (data: loginFormData) => {
+    await login(data.email, data.password);
   };
 
   return (
@@ -66,16 +69,27 @@ const Login = () => {
           }
           type={isPasswordVisible ? "text" : "password"}
         />
-        <Link href="#" className="text-secondary">
+        <Link href="/auth/recovery" className="text-secondary">
           Esqueceu a senha?
         </Link>
-        <Button type="submit" className="bg-secondary text-white text-xl">
+        <Button
+          type="submit"
+          className="bg-secondary text-white text-xl"
+          isLoading={isLoading}
+          isDisabled={!isValid || isLoading || isSubmitting}
+        >
           Logar
         </Button>
       </form>
       <p className="text-secondary text-center mb-4">Ou</p>
       <section className="flex flex-col gap-4">
-        <Button variant="ghost" className=" text-secondary text-xl">
+        <Button
+          variant="ghost"
+          className=" text-secondary text-xl"
+          isLoading={isLoading}
+          onClick={loginWithGoogle}
+          isDisabled={isLoading || isSubmitting}
+        >
           Entrar com o google
         </Button>
         <Link href="#" className="text-secondary">

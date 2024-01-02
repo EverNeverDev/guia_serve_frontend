@@ -7,6 +7,7 @@ import EyeSlashFilledIcon from "./components/EyeSlashFilledIcon";
 import EyeFilledIcon from "./components/EyeFilledIcon";
 import CustomNavbar from "./components/CustomNavbar";
 import WrapperContainer from "./components/WrapperContainer";
+import UnAuthenticatedRedirect from "./components/UnAuthenticatedRedirect";
 // Repositories
 import userRepo from "./repositories/user.repository";
 /*
@@ -19,6 +20,7 @@ export {
   EyeFilledIcon,
   CustomNavbar,
   WrapperContainer,
+  UnAuthenticatedRedirect,
 };
 
 // Repositories

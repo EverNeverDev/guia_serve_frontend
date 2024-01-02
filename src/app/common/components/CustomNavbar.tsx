@@ -15,7 +15,7 @@ const CustomNavbar = () => {
       </NavbarBrand>
       <NavbarContent justify="end">
         <NavbarItem>
-          <Button as={Link} color="secondary" href="#" variant="flat">
+          <Button as={Link} color="secondary" href="/auth/login" variant="flat">
             Fazer login
           </Button>
         </NavbarItem>
